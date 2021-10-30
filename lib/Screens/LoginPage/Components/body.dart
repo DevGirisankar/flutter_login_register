@@ -12,16 +12,16 @@ class Body extends StatelessWidget {
     FocusNode myFocusNode = new FocusNode();
 
     return (Background(
-      child: SingleChildScrollView(
+      child: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 180,
             ),
-            Text(
+            const Text(
               'Let\'s sign you in.',
               textAlign: TextAlign.left,
               style: TextStyle(
@@ -29,10 +29,10 @@ class Body extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 30),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               'Welcome back.',
               textAlign: TextAlign.left,
               style: TextStyle(
@@ -40,7 +40,7 @@ class Body extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 28),
             ),
-            Text(
+            const Text(
               'You have been missed!',
               textAlign: TextAlign.left,
               style: TextStyle(
@@ -48,10 +48,10 @@ class Body extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 28),
             ),
-            SizedBox(
-              height: 59,
+            const SizedBox(
+              height: 60,
             ),
-            Container(
+            const SizedBox(
               height: 70,
               child: TextField(
                 style: TextStyle(color: Colors.white),
@@ -64,15 +64,15 @@ class Body extends StatelessWidget {
                         borderSide: BorderSide(color: kFieldTextColor)),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(18)),
-                        borderSide: new BorderSide(color: kFieldTextColor)),
+                        borderSide: BorderSide(color: kFieldTextColor)),
                     labelText: 'User name',
                     labelStyle: TextStyle(color: kFieldTextColor)),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Container(
+            const SizedBox(
               height: 70,
               child: TextField(
                 obscureText: true,
@@ -90,11 +90,65 @@ class Body extends StatelessWidget {
                         borderSide: BorderSide(color: kFieldTextColor)),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(18)),
-                        borderSide: new BorderSide(color: kFieldTextColor)),
+                        borderSide: BorderSide(color: kFieldTextColor)),
                     labelText: 'Password',
                     labelStyle: TextStyle(color: kFieldTextColor)),
               ),
             ),
+            const Spacer(),
+            Positioned(
+              child: Align(
+                  alignment: FractionalOffset.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Don\'t have an account?',
+                        style: TextStyle(
+                            color: kFieldTextColor,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all<Color>(kBGColor)),
+                          child: const Text(
+                            'Register',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold),
+                          ))
+                    ],
+                  )),
+            ),
+            SizedBox(
+                height: 60,
+                child: ElevatedButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                        overlayColor:
+                            MaterialStateProperty.all<Color>(Colors.grey),
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.white),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                        ))),
+                    child: const Center(
+                      child: Text('Sign In',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 16)),
+                    ))),
+            const SizedBox(
+              height: 10,
+            )
           ],
         ),
       ),
