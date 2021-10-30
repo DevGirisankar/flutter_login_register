@@ -33,7 +33,9 @@ class Background extends StatelessWidget {
                 top: 70,
                 left: 10,
                 child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
                             Colors.transparent)),

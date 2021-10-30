@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_login_signup/Screens/LoginPage/login.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_login_signup/constants.dart';
 import 'background.dart';
@@ -77,7 +78,16 @@ class Body extends StatelessWidget {
                             )))),
                 Expanded(
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return LoginPage();
+                              },
+                            ),
+                          );
+                        },
                         style: ButtonStyle(
                             backgroundColor:
                                 MaterialStateProperty.all<Color>(kGreyColor),
