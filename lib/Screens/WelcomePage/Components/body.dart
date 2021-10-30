@@ -77,33 +77,36 @@ class Body extends StatelessWidget {
                                       fontSize: 16)),
                             )))),
                 Expanded(
-                    child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return LoginPage();
-                              },
-                            ),
-                          );
-                        },
-                        style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all<Color>(kGreyColor),
-                            shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                  bottomRight: Radius.circular(18.0),
-                                  topRight: Radius.circular(18.0)),
-                            ))),
-                        child: const Text('Sign In',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 16))))
+                    child: Hero(
+                        tag: 'buttonHero',
+                        child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const LoginPage();
+                                  },
+                                ),
+                              );
+                            },
+                            style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        kGreyColor),
+                                shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                      bottomRight: Radius.circular(18.0),
+                                      topRight: Radius.circular(18.0)),
+                                ))),
+                            child: const Text('Sign In',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 16)))))
               ],
             ),
           )

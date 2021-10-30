@@ -126,26 +126,27 @@ class Body extends StatelessWidget {
             ),
             SizedBox(
                 height: 60,
-                child: ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                        overlayColor:
-                            MaterialStateProperty.all<Color>(Colors.grey),
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.white),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0),
-                        ))),
-                    child: const Center(
-                      child: Text('Sign In',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                              fontSize: 16)),
-                    ))),
+                child: Hero(
+                    tag: 'buttonHero',
+                    child: ElevatedButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                            overlayColor:
+                                MaterialStateProperty.all<Color>(Colors.grey),
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(Colors.white),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18.0),
+                            ))),
+                        child: const Center(
+                          child: Text('Sign In',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontSize: 16)),
+                        )))),
             const SizedBox(
               height: 10,
             )
