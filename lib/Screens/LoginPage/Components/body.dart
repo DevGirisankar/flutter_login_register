@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_login_signup/Screens/RegisterPage/register.dart';
 import 'package:flutter_login_signup/constants.dart';
 import 'background.dart';
 
@@ -9,7 +10,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //  Size size = MediaQuery.of(context).size;
-    FocusNode myFocusNode = new FocusNode();
+    // FocusNode myFocusNode = new FocusNode();
 
     return (Background(
       child: Column(
@@ -24,13 +25,12 @@ class Body extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                Container(
+                SizedBox(
                   height: 50,
                   child: Align(
                       alignment: Alignment.centerLeft,
                       child: TextButton(
                           onPressed: () {
-                            print('back action');
                             Navigator.pop(context);
                           },
                           style: ButtonStyle(
@@ -134,26 +134,33 @@ class Body extends StatelessWidget {
                         fontSize: 15,
                         fontWeight: FontWeight.w600),
                   ),
-                  ElevatedButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(kBGColor)),
-                      child: const Text(
-                        'Register',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold),
-                      ))
+                  Hero(
+                      tag: 'buttonRegister',
+                      child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return RegisterPage();
+                            }));
+                          },
+                          style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all<Color>(kBGColor)),
+                          child: const Text(
+                            'Register',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold),
+                          )))
                 ],
               )),
           Padding(
-            padding: EdgeInsets.only(left: 20, right: 20),
+            padding: const EdgeInsets.only(left: 20, right: 20),
             child: SizedBox(
                 height: 60,
                 child: Hero(
-                    tag: 'buttonHero',
+                    tag: 'buttonLogin',
                     child: ElevatedButton(
                         onPressed: () {},
                         style: ButtonStyle(
@@ -166,7 +173,7 @@ class Body extends StatelessWidget {
                               borderRadius: BorderRadius.circular(18.0),
                             ))),
                         child: const Center(
-                          child: Text('Sign In',
+                          child: Text('Log In',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,

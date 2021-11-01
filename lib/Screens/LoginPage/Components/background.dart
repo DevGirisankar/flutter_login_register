@@ -15,12 +15,12 @@ class Background extends StatelessWidget {
     return Container(
         color: kBGColor,
         height: size.height,
-        width: double.infinity,
+        width: size.width,
         child: Stack(
           alignment: Alignment.topCenter,
           children: [
             Positioned(
-              child: Container(
+              child: SizedBox(
                 height: 500,
                 child: Lottie.network(
                     'https://raw.githubusercontent.com/DevGirisankar/Lottie-files/main/wave.json',

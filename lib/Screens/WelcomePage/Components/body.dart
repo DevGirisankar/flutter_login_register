@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login_signup/Screens/LoginPage/login.dart';
+import 'package:flutter_login_signup/Screens/RegisterPage/register.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_login_signup/constants.dart';
 import 'background.dart';
@@ -51,34 +52,44 @@ class Body extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Expanded(
-                    child: Container(
-                        decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: Colors.white),
-                        child: ElevatedButton(
-                            onPressed: () {},
-                            style: ButtonStyle(
-                                overlayColor: MaterialStateProperty.all<Color>(
-                                    Colors.grey),
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        Colors.white),
-                                shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(18.0),
-                                ))),
-                            child: const Center(
-                              child: Text('Register',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black,
-                                      fontSize: 16)),
-                            )))),
+                    child: Hero(
+                        tag: 'buttonRegister',
+                        child: Container(
+                            decoration: const BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20)),
+                                color: Colors.white),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  print('press');
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return const RegisterPage();
+                                  }));
+                                },
+                                style: ButtonStyle(
+                                    overlayColor:
+                                        MaterialStateProperty.all<Color>(
+                                            Colors.grey),
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            Colors.white),
+                                    shape: MaterialStateProperty.all<
+                                            RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.0),
+                                    ))),
+                                child: const Center(
+                                  child: Text('Register',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
+                                          fontSize: 16)),
+                                ))))),
                 Expanded(
                     child: Hero(
-                        tag: 'buttonHero',
+                        tag: 'buttonLogin',
                         child: ElevatedButton(
                             onPressed: () {
                               Navigator.push(
@@ -101,7 +112,7 @@ class Body extends StatelessWidget {
                                       bottomRight: Radius.circular(18.0),
                                       topRight: Radius.circular(18.0)),
                                 ))),
-                            child: const Text('Sign In',
+                            child: const Text('Log In',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
