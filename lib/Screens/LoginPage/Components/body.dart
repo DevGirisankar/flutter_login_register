@@ -12,119 +12,145 @@ class Body extends StatelessWidget {
     FocusNode myFocusNode = new FocusNode();
 
     return (Background(
-      child: Padding(
-        padding: EdgeInsets.all(20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const SizedBox(
-              height: 180,
-            ),
-            const Text(
-              'Let\'s sign you in.',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: 30),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Text(
-              'Welcome back.',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  fontWeight: FontWeight.w300,
-                  color: Colors.white,
-                  fontSize: 28),
-            ),
-            const Text(
-              'You have been missed!',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  fontWeight: FontWeight.w300,
-                  color: Colors.white,
-                  fontSize: 28),
-            ),
-            const SizedBox(
-              height: 60,
-            ),
-            const SizedBox(
-              height: 70,
-              child: TextField(
-                style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(18)),
-                        borderSide: BorderSide(color: Colors.white)),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(18)),
-                        borderSide: BorderSide(color: kFieldTextColor)),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(18)),
-                        borderSide: BorderSide(color: kFieldTextColor)),
-                    labelText: 'User name',
-                    labelStyle: TextStyle(color: kFieldTextColor)),
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const SizedBox(
-              height: 70,
-              child: TextField(
-                obscureText: true,
-                style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                    suffixIcon: Icon(
-                      Icons.remove_red_eye,
-                      color: Colors.grey,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(18)),
-                        borderSide: BorderSide(color: Colors.white)),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(18)),
-                        borderSide: BorderSide(color: kFieldTextColor)),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(18)),
-                        borderSide: BorderSide(color: kFieldTextColor)),
-                    labelText: 'Password',
-                    labelStyle: TextStyle(color: kFieldTextColor)),
-              ),
-            ),
-            const Spacer(),
-            Positioned(
-              child: Align(
-                  alignment: FractionalOffset.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'Don\'t have an account?',
-                        style: TextStyle(
-                            color: kFieldTextColor,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      ElevatedButton(
-                          onPressed: () {},
+      child: Column(
+        children: [
+          Expanded(
+              child: SingleChildScrollView(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  height: 50,
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: TextButton(
+                          onPressed: () {
+                            print('back action');
+                            Navigator.pop(context);
+                          },
                           style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStateProperty.all<Color>(kBGColor)),
-                          child: const Text(
-                            'Register',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold),
-                          ))
-                    ],
-                  )),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.transparent)),
+                          child: const Image(
+                            image: AssetImage('assets/images/back.png'),
+                            width: 30,
+                            height: 30,
+                          ))),
+                ),
+                const SizedBox(
+                  height: 100,
+                ),
+                const Text(
+                  'Let\'s sign you in.',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 30),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  'Welcome back.',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                      fontSize: 28),
+                ),
+                const Text(
+                  'You have been missed!',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                      fontSize: 28),
+                ),
+                const SizedBox(
+                  height: 60,
+                ),
+                const SizedBox(
+                  height: 70,
+                  child: TextField(
+                    style: TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(18)),
+                            borderSide: BorderSide(color: Colors.white)),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(18)),
+                            borderSide: BorderSide(color: kFieldTextColor)),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(18)),
+                            borderSide: BorderSide(color: kFieldTextColor)),
+                        labelText: 'User name',
+                        labelStyle: TextStyle(color: kFieldTextColor)),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const SizedBox(
+                  height: 70,
+                  child: TextField(
+                    obscureText: true,
+                    style: TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                        suffixIcon: Icon(
+                          Icons.remove_red_eye,
+                          color: Colors.grey,
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(18)),
+                            borderSide: BorderSide(color: Colors.white)),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(18)),
+                            borderSide: BorderSide(color: kFieldTextColor)),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(18)),
+                            borderSide: BorderSide(color: kFieldTextColor)),
+                        labelText: 'Password',
+                        labelStyle: TextStyle(color: kFieldTextColor)),
+                  ),
+                ),
+              ],
             ),
-            SizedBox(
+          )),
+          Align(
+              alignment: FractionalOffset.center,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Don\'t have an account?',
+                    style: TextStyle(
+                        color: kFieldTextColor,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  ElevatedButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(kBGColor)),
+                      child: const Text(
+                        'Register',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                      ))
+                ],
+              )),
+          Padding(
+            padding: EdgeInsets.only(left: 20, right: 20),
+            child: SizedBox(
                 height: 60,
                 child: Hero(
                     tag: 'buttonHero',
@@ -147,11 +173,11 @@ class Body extends StatelessWidget {
                                   color: Colors.black,
                                   fontSize: 16)),
                         )))),
-            const SizedBox(
-              height: 10,
-            )
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 20,
+          )
+        ],
       ),
     ));
   }

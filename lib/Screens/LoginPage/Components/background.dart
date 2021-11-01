@@ -29,21 +29,6 @@ class Background extends StatelessWidget {
               ),
               top: 0,
             ),
-            Positioned(
-                top: 70,
-                left: 10,
-                child: TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            Colors.transparent)),
-                    child: const Image(
-                      image: AssetImage('assets/images/back.png'),
-                      width: 30,
-                      height: 30,
-                    ))),
             child,
           ],
         ));
