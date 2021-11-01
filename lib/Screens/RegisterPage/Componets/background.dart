@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_login_signup/constants.dart';
 import 'package:lottie/lottie.dart';
+import 'package:flutter_login_signup/constants.dart';
 
 class Background extends StatelessWidget {
   final Widget child;
