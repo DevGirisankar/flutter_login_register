@@ -23,7 +23,7 @@ class Body extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
                 SizedBox(
                   height: 50,
@@ -138,9 +138,9 @@ class Body extends StatelessWidget {
                       tag: 'buttonRegister',
                       child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return RegisterPage();
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(builder: (builder) {
+                              return const RegisterPage();
                             }));
                           },
                           style: ButtonStyle(

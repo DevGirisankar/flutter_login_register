@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_login_signup/Screens/LoginPage/login.dart';
 import 'package:flutter_login_signup/constants.dart';
 import 'background.dart';
 
@@ -19,7 +20,7 @@ class Body extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(
-                height: 20,
+                height: 40,
               ),
               SizedBox(
                 height: 50,
@@ -194,7 +195,10 @@ class Body extends StatelessWidget {
                     tag: 'buttonLogin',
                     child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pop(context);
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(builder: (builder) {
+                            return const LoginPage();
+                          }));
                         },
                         style: ButtonStyle(
                             backgroundColor:

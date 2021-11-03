@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_login_signup/Screens/ListPage/list_page.dart';
 import 'package:flutter_login_signup/Screens/LoginPage/login.dart';
 import 'package:flutter_login_signup/Screens/RegisterPage/register.dart';
 import 'package:lottie/lottie.dart';
@@ -96,7 +97,7 @@ class Body extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const LoginPage();
+                                    return const ListPage();
                                   },
                                 ),
                               );
