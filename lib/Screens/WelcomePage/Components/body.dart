@@ -62,7 +62,6 @@ class Body extends StatelessWidget {
                                 color: Colors.white),
                             child: ElevatedButton(
                                 onPressed: () {
-                                  print('press');
                                   Navigator.push(context,
                                       MaterialPageRoute(builder: (context) {
                                     return const RegisterPage();
@@ -97,7 +96,7 @@ class Body extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const ListPage();
+                                    return const LoginPage();
                                   },
                                 ),
                               );
